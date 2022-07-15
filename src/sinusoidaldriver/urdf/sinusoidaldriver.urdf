@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+  <robot name="sinusoidaldriver">
+      <link name="base_link">
+      <visual>
+        <geometry>
+          <box size="1.01098 0.74658 .25"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0.2"/>
+        <material name="green">
+           <color rgba="0 1 0 1"/>
+        </material>
+      </visual>
+    </link>
+ <link name="wheel_0_joint">
+    <visual>
+      <geometry>
+        <cylinder length="0.027" radius="0.0825"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="front_left_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="wheel_0_joint"/>
+    <origin xyz="0 0.30 0.0" rpy="0.0 0 0"/>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </joint>
+
+   <link name="wheel_1_joint">
+    <visual>
+      <geometry>
+        <cylinder length="0.027" radius="0.0825"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="front_right_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="wheel_1_joint"/>
+    <origin xyz="0 -0.30 0.0" rpy="0.0 0 0"/>
+    <hardwareInterface>VelocityJointInterface</hardwareInterface> 
+  </joint>
+  
+  </robot>

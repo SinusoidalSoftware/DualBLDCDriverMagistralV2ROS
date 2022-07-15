@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name="model" default="$(find sinusoidaldriver)/urdf/sinusoidaldriver.urdf"/>
+<rosparam command="load" file="$(find sinusoidaldriver)/config/driver.yaml"/>
+<node name="sinusoidaldriver" pkg="sinusoidaldriver" type="sinusoidaldriver_node"  output="screen"/>
+<rosparam command="load" file="$(find sinusoidaldriver)/config/control.yaml"/>
+<node name="controller_spawner"  pkg="controller_manager" type="spawner" respawn="false" output="screen" args="mobile_base_controller" />
+
+</launch>

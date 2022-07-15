@@ -1,0 +1,9 @@
+sinusoidaldriver:
+  left_wheel_name: "front_left_wheel_joint"
+  right_wheel_name: "front_right_wheel_joint"
+  baud_rate: 115200
+  device: "/dev/ttyUSB0"
+  hall_counts_per_rev: 90
+  driver_loop_rate: 10
+  left_wheel_reversed: true
+  right_wheel_reversed: false
