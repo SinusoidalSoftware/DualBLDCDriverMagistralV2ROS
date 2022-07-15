@@ -40,6 +40,27 @@ Necessary ros packages,
 
 # Test 
 * rosrun key_teleop key_teleop.py /key_vel:=/mobile_base_controller/cmd_vel
+* rosrun rqt_gui rqt_gui
+
+# Parameter Files
+* Under src/sinusoidaldriver/config there are 2 .yaml files.
+    - control.yaml file,
+      left_wheel -> joint name from urdf,
+      right_wheel -> joint name from urdf,
+      publish_rate -> must be same with driver setting,
+      wheel_seperation -> must be filled in meters
+      wheel_radius -> must be filled in meters
+    - driver.yaml file,
+      left_wheel_name -> joint name from urdf,
+      right_wheel_name -> joint name from urdf,
+      baudrate -> 115200 (fixed),
+      device -> "/dev/ttyUSBX" X must be changed,
+      hall_counts_per_rev -> motor pole count * 6
+      driver_loop_rate -> must be same with driver setting,
+      left_wheel_reversed -> if motor reversed set true,
+      right_wheel_reversed -> if motor reversed reversed set true.
+      
+      
 
 
 
